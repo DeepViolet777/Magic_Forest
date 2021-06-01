@@ -33,6 +33,7 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.2.0",
     "gulp-eslint": "^6.0.0",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-html-bem-validator": "^1.0.5",
     "gulp-npm-dist": "^1.0.3",
     "gulp-npm-files": "^0.1.3",

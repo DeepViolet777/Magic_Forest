@@ -8,6 +8,13 @@ const html = require('./gulp/tasks/html')
 const imageMinify = require('./gulp/tasks/imageMinify')
 const clean = require('./gulp/tasks/clean')
 const copyDependencies = require('./gulp/tasks/copyDependencies')
+const deploy = require('gulp-gh-pages');
+
+
+gulp.task('deploy', function () {
+  return gulp.src("./build/**/*")
+    .pipe(deploy())
+});
 
 function setMode(isProduction = false) {
   return cb => {
@@ -22,4 +29,5 @@ const build = gulp.series(clean, copyDependencies, dev)
 
 module.exports.start = gulp.series(setMode(), build, serve)
 module.exports.build = gulp.series(setMode(true), build)
+
 
