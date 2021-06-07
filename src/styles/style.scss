@@ -1,10 +1,13 @@
 @import "common/global";
+@import "mixins/media.scss";
 
 .header {
     height: 828px;
     width: 100%;
     background-image: url(./../img/header-bg.png);
     font-weight: 700;
+    background-size: cover;
+    background-position: center;
 
     &_side-bar {
         display: flex;
@@ -170,9 +173,13 @@
 }
 
 .main {
-    width: 1220px;
-    margin: 0 auto;
+    width: 100%;
     font-weight: 700;
+
+    .container {
+        width: 1220px;
+        margin: 0 auto;
+    }
 
     .location {
         width: 1190px;
@@ -561,4 +568,198 @@
         margin-top: 5px;
 
     }
+}
+
+
+@include mediaLaptop {
+
+    body {
+    width: 100%;
+    }
+
+    .header{
+        width:1440px;
+        background-size: unset;
+        background-position: center;
+    }
+
+    .main {
+
+        &_text {
+            margin-bottom: 90px;
+        }
+
+        .container {
+            min-width: 1130px;
+            margin: 0 auto;
+        }
+
+
+        .location {
+            width: 1154px;
+            height: 51px;
+            margin-top: 30px;
+            margin-left: 0;
+            margin-bottom: 52px;
+        }
+
+
+        .banner {
+            width: 1130px;
+            height: 366px;
+            margin-bottom: 60px;
+        }
+
+
+        .benefits {
+            width: 100%;
+            height: 565px;
+            display: grid;
+            grid-template-columns: 50% 25% 25%;
+            grid-template-rows: 50% 50%;
+
+            .item {
+
+                &-1 {
+                    width: 565px;
+                    height: 282.5px;
+                }
+
+                &-2 {
+                    width: 282.5px;
+                    height: 282.5px;
+                    margin-left: -45px;
+                }
+
+                &-3 {
+                    width: 282.5px;
+                    height: 565px;
+                    margin-left: -70px;
+                }
+
+                &-4 {
+                    width: 282.5px;
+                    height: 282.5px;
+                }
+
+                &-5 {
+                    width: 565px;
+                    height: 282.5px;
+                    margin-left: -330px;
+                }
+            }
+
+        }
+
+        .info {
+            width: 1074px;
+            height: 67px;
+
+            &_item {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .item {
+                &-1 {
+                    position: relative;
+                    padding-left: 70px;
+                    width: 220px;
+                    height: 58px;
+                    margin-left: 20px;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 49px;
+                        height: 49px;
+                        background-image: url(./../img/crane4.svg);
+                        top: 0;
+                        left: 0;
+
+                    }
+                }
+
+                &-2 {
+                    position: relative;
+                    padding-left: 70px;
+                    width: 220px;
+                    height: 58px;
+                    margin-left: 70px;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 49px;
+                        height: 49px;
+                        background-image: url(./../img/hotel2.svg);
+                        top: 0;
+                        left: 0;
+                    }
+                }
+
+                &-3 {
+                    position: relative;
+                    padding-left: 70px;
+                    width: 220px;
+                    height: 58px;
+                    margin-left: 60px;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 39px;
+                        height: 39px;
+                        background-image: url(./../img/building2.svg);
+                        top: 10px;
+                        left: 10px;
+                    }
+                }
+
+                &-4 {
+                    position: relative;
+                    padding-left: 110px;
+                    width: 220px;
+                    height: 58px;
+                    margin-left: 10px;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 60px;
+                        height: 60px;
+                        background-image: url(./../img/garage3.svg);
+                        top: 0;
+                        left: 30px;
+                    }
+                }
+            }
+
+            .text {
+                &-1 {
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 0px;
+                    text-align: left;
+                    color: #9E7B56;
+                }
+
+                &-2 {
+                    font-size: 18px;
+                    line-height: 27px;
+                    letter-spacing: 0px;
+                    text-align: left;
+                    color: #2D2D2D;
+                }
+            }
+        }
+    }
+
+    &_content {
+        width: 1190px;
+        margin: 0 auto;
+        display: flex;
+        padding-top: 40px;
+
+}
 }

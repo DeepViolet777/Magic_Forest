@@ -1,15 +1,15 @@
 @import "../utils/variables";
 
-@mixin media-tablet {
+@mixin mediaLaptop {
 
-    @media (min-width: $mediaWidthTablet) {
+    @media (max-width: $mediaLaptop) {
         @content;
     }
 }
 
-@mixin media-tablet-horizontal {
+@mixin mediaMacBook {
 
-    @media (min-width: $mediaWidthTabletHorizontal) {
+    @media (min-width: $mediaMacBook) {
         @content;
     }
 }
