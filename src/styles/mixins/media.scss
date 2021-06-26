@@ -1,29 +1,29 @@
 @import "../utils/variables";
 
-@mixin mediaLaptop {
+@mixin media_1440 {
 
-    @media (max-width: $mediaLaptop) {
+    @media (max-width: $media_1440) {
         @content;
     }
 }
 
-@mixin mediaMacBook {
+@mixin media_1152 {
 
-    @media (min-width: $mediaMacBook) {
+    @media (max-width: $media_1152) {
         @content;
     }
 }
 
-@mixin media-laptop {
+@mixin media_768 {
 
-    @media (min-width: $mediaWidthLaptop) {
+    @media (max-width: $media_768 ) {
         @content;
     }
 }
 
-@mixin media-custom($width) {
+@mixin media_375 {
 
-    @media (min-width: $width) {
+    @media (max-width: $media_375) {
         @content;
     }
 }

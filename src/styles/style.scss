@@ -42,6 +42,13 @@
 
         .logo {
             margin: 28px auto 0;
+            width: 223px;
+            height: 165px;
+
+            &_img {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         .links {
@@ -127,6 +134,13 @@
             margin-top: 39px;
         }
 
+        .burger-menu {
+            display: none;
+        }
+
+        .toggle-menu {
+            display: none;
+        }
     }
 
     .promo {
@@ -134,6 +148,11 @@
         left: 420px;
         top: 448px;
         width: 524px;
+
+        .forest_logo {
+            width: 79px;
+            height: 53px;
+        }
 
         &_text {
             margin-top: 15px;
@@ -150,14 +169,14 @@
 
             &-2 {
                 font-size: 44px;
-                line-height: 44px;
+                line-height: 41px;
 
             }
 
             &-3 {
                 margin-top: 10px;
-                font-size: 58px;
-                line-height: 44px;
+                font-size: 48px;
+                line-height: 45px;
                 letter-spacing: 1px;
             }
 
@@ -571,17 +590,32 @@
 }
 
 
-@include mediaLaptop {
+@include media_1440 {
 
-    body {
-    width: 100%;
-    }
-
-    .header{
-        width:1440px;
+    .header {
+        width: 1440px;
         background-size: unset;
         background-position: center;
+
+        .promo {
+            &_text {
+
+                &-1 {
+                    font-size: 60px;
+                    line-height: 75px;
+                    color: #E3CEA3;
+                }
+
+                &-2 {
+                    font-size: 36px;
+                    line-height: 34px;
+
+                }
+            }
+        }
+
     }
+
 
     .main {
 
@@ -755,11 +789,378 @@
         }
     }
 
-    &_content {
+    /*  &_content {
         width: 1190px;
         margin: 0 auto;
         display: flex;
         padding-top: 40px;
 
+    }*/
+
 }
+
+@include media_1152 {
+
+    .header {
+        width: 1152px;
+        height: 675px;
+        background-size: cover;
+        background-position: 25% 100%;
+
+        &_side-bar {
+            width: 310px;
+            height: 675px;
+
+            .logo {
+                margin: 38px auto 0;
+                width: 170px;
+                height: 108px;
+            }
+
+            .menu {
+                margin-top: 42px;
+                margin-left: 70px;
+
+                &-list {
+                    height: 203px;
+                    width: 201px;
+                    font-size: 15px;
+                    line-height: 34px;
+                }
+            }
+
+            .links {
+                margin-top: 55px;
+                margin-left: 70px;
+
+                &_cams {
+                    margin-bottom: 5px;
+
+                    &::before {
+                        width: 19px;
+                        height: 14px;
+                        background-image: url(./../img/cam.svg);
+                        background-size: contain;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+
+                &_tour {
+                    &::before {
+                        width: 18px;
+                        height: 17px;
+                        background-image: url(./../img/tour.svg);
+                        background-size: contain;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            .phone {
+                margin-top: 20px;
+                margin-left: 70px;
+            }
+
+            .flat_btn {
+                width: 168px;
+                height: 41px;
+                margin-left: 70px;
+                margin-top: 21px;
+            }
+
+        }
+
+        .promo {
+            left: 342px;
+            top: 397px;
+            width: 427px;
+
+            .forest_logo {
+                width: 64px;
+                height: 43px;
+            }
+
+            &_text {
+                margin-top: 15px;
+                padding-left: 10px;
+
+                &-1 {
+                    font-size: 50px;
+                    line-height: 60px;
+                }
+
+                &-2 {
+                    font-size: 36px;
+                    line-height: 36.2px;
+                }
+
+                &-3 {
+                    margin-top: 4px;
+                    font-size: 48px;
+                    line-height: 45px;
+                    letter-spacing: 1px;
+                }
+
+                &-4 {
+                    margin-top: 0;
+                    font-size: 30px;
+                    line-height: 33px;
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+
+    }
+}
+
+@include media_768 {
+
+    .header {
+        width: 768px;
+        height: 520px;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+
+
+        &_side-bar {
+            width: 768px;
+            height: 86px;
+            flex-direction: row;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background: #0B351D;
+            opacity: 1;
+
+
+            .logo {
+                margin-top: 10px;
+                margin-left: 56px;
+                width: 97px;
+                height: 62px;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .links {
+                display: none;
+                margin-top: 55px;
+                margin-left: 70px;
+
+                &_cams {
+                    margin-bottom: 5px;
+
+                    &::before {
+                        width: 19px;
+                        height: 14px;
+                        background-image: url(./../img/cam.svg);
+                        background-size: contain;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+
+                &_tour {
+                    &::before {
+                        width: 18px;
+                        height: 17px;
+                        background-image: url(./../img/tour.svg);
+                        background-size: contain;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            .phone {
+                position: absolute;
+                top: -2px;
+                left: 210px;
+            }
+
+            .flat_btn {
+                width: 168px;
+                height: 40px;
+                position: absolute;
+                top: 0;
+                left: 417px;
+            }
+
+            .burger-menu {
+                display: block;
+                position: absolute;
+                right: 58px;
+                top: 21px;
+            }
+
+            .menu-icon-wrapper {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #9FC460;
+                transition: ease-in 0.2s;
+            }
+
+            .menu-icon {
+                position: relative;
+                width: 14px;
+                height: 2px;
+                background-color: #234934;
+            }
+
+            .menu-icon::before {
+                position: absolute;
+                left: 0;
+                top: -6px;
+                content: '';
+                width: 14px;
+                height: 2px;
+                background-color: #234934;
+                transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+
+            }
+
+            .menu-icon::after {
+                position: absolute;
+                left: 0;
+                top: 6px;
+                content: '';
+                width: 14px;
+                height: 2px;
+                background-color: #234934;
+                transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+
+            }
+
+            .menu-icon.menu-icon-active {
+                background-color: transparent;
+            }
+
+            .menu-icon.menu-icon-active::before {
+                transform: rotate(45deg);
+                top: 0;
+                transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+                background: #E3CEA3;
+            }
+
+            .menu-icon.menu-icon-active::after {
+                transform: rotate(-45deg);
+                top: 0;
+                transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+                background: #E3CEA3;
+            }
+
+            .menu-icon-wrapper.active {
+                background-color: transparent;
+            }
+
+            .toggle-menu{
+                display: block;
+                width: 0;
+                height: 0;
+                background-color: #0B351D;
+                z-index: 1;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                transition: ease-in 0.6s;
+
+                .menu {
+                    display: block;
+                    opacity: 0;
+                    transition: ease-in 0.6s;
+                }
+            }
+
+            .toggle-menu.active {
+                width: 768px;
+                height: 440px;
+
+
+                .menu {
+                    opacity: 1;
+                }
+    
+                .links {
+                    display: none;
+                    margin-top: 55px;
+                    margin-left: 70px;
+    
+                    &_cams {
+                        margin-bottom: 5px;
+    
+                        &::before {
+                            width: 19px;
+                            height: 14px;
+                            background-image: url(./../img/cam.svg);
+                            background-size: contain;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+    
+                    &_tour {
+                        &::before {
+                            width: 18px;
+                            height: 17px;
+                            background-image: url(./../img/tour.svg);
+                            background-size: contain;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .promo {
+            left: 342px;
+            top: 397px;
+            width: 427px;
+
+            .forest_logo {
+                width: 64px;
+                height: 43px;
+            }
+
+            &_text {
+                margin-top: 15px;
+                padding-left: 10px;
+
+                &-1 {
+                    font-size: 50px;
+                    line-height: 60px;
+                }
+
+                &-2 {
+                    font-size: 36px;
+                    line-height: 36.2px;
+                }
+
+                &-3 {
+                    margin-top: 4px;
+                    font-size: 48px;
+                    line-height: 45px;
+                    letter-spacing: 1px;
+                }
+
+                &-4 {
+                    margin-top: 0;
+                    font-size: 30px;
+                    line-height: 33px;
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+
+    }
 }
