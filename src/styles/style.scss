@@ -188,6 +188,10 @@
                 letter-spacing: 1px;
             }
         }
+
+        .address {
+            display: none;
+        }
     }
 }
 
@@ -930,12 +934,12 @@
             width: 768px;
             height: 86px;
             flex-direction: row;
-            position: absolute;
+            position: fixed;
             left: 0px;
             top: 0px;
             background: #0B351D;
             opacity: 1;
-
+            z-index: 50;
 
             .logo {
                 margin-top: 10px;
@@ -950,32 +954,6 @@
 
             .links {
                 display: none;
-                margin-top: 55px;
-                margin-left: 70px;
-
-                &_cams {
-                    margin-bottom: 5px;
-
-                    &::before {
-                        width: 19px;
-                        height: 14px;
-                        background-image: url(./../img/cam.svg);
-                        background-size: contain;
-                        top: 0;
-                        left: 0;
-                    }
-                }
-
-                &_tour {
-                    &::before {
-                        width: 18px;
-                        height: 17px;
-                        background-image: url(./../img/tour.svg);
-                        background-size: contain;
-                        top: 0;
-                        left: 0;
-                    }
-                }
             }
 
             .phone {
@@ -1062,73 +1040,89 @@
                 background-color: transparent;
             }
 
-            .toggle-menu{
+            .toggle-menu {
                 display: block;
-                width: 0;
-                height: 0;
+                width: 768px;
+                height: 440px;
                 background-color: #0B351D;
-                z-index: 1;
                 position: absolute;
                 top: 80px;
-                left: 0;
-                transition: ease-in 0.6s;
+                left: -768px;
+                transition: ease-in 0.4s;
+                z-index: 0;
 
                 .menu {
                     display: block;
                     opacity: 0;
-                    transition: ease-in 0.6s;
+                    transition: ease 0.4s;
+                    margin-top: 82px;
+                    margin-left: 54px;
+                }
+
+                .links {
+                    display: flex;
+                    opacity: 0;
+                    transition: ease 0.4s;
+                }
+
+                .address {
+                    display: block;
+                    opacity: 0;
+                    transition: ease 0.4s;
                 }
             }
 
             .toggle-menu.active {
-                width: 768px;
-                height: 440px;
-
+                left: 0;
 
                 .menu {
                     opacity: 1;
+
+                    &-list {
+                        height: 260px;
+                    }
                 }
-    
+
                 .links {
-                    display: none;
-                    margin-top: 55px;
-                    margin-left: 70px;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 34px;
+                    left: 202px;
+                    opacity: 1;
+                }
+
+                .address {
+                    opacity: 1;   
+                    font-size: 18px;
+                    line-height: 23px;
+                    color: #9E7B56;
+                    position: absolute;
+                    bottom: 30px;
+                    left: 275px;
+                    padding-left: 32px;
+                    position: relative;
     
-                    &_cams {
-                        margin-bottom: 5px;
-    
-                        &::before {
-                            width: 19px;
-                            height: 14px;
-                            background-image: url(./../img/cam.svg);
-                            background-size: contain;
-                            top: 0;
-                            left: 0;
-                        }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        background-image: url(../img/mob_address.svg);
+                        left: 0;
+                        top: 0;
                     }
-    
-                    &_tour {
-                        &::before {
-                            width: 18px;
-                            height: 17px;
-                            background-image: url(./../img/tour.svg);
-                            background-size: contain;
-                            top: 0;
-                            left: 0;
-                        }
-                    }
+                   
                 }
             }
         }
 
         .promo {
-            left: 342px;
-            top: 397px;
+            left: 40px;
+            top: 265px;
             width: 427px;
 
             .forest_logo {
-                width: 64px;
-                height: 43px;
+                margin-left: 10px;
             }
 
             &_text {
@@ -1136,28 +1130,51 @@
                 padding-left: 10px;
 
                 &-1 {
-                    font-size: 50px;
-                    line-height: 60px;
+                    font-size: 36px;
+                    line-height: 45px;
                 }
 
                 &-2 {
-                    font-size: 36px;
-                    line-height: 36.2px;
+                    font-size: 26px;
+                    line-height: 26.2px;
                 }
 
                 &-3 {
                     margin-top: 4px;
-                    font-size: 48px;
-                    line-height: 45px;
-                    letter-spacing: 1px;
+                    font-size: 38px;
+                    line-height: 35px;
+                    letter-spacing: -0.6px;
                 }
 
                 &-4 {
                     margin-top: 0;
-                    font-size: 30px;
-                    line-height: 33px;
+                    font-size: 25px;
+                    line-height: 28px;
                     font-weight: 400;
                     letter-spacing: 1px;
+                }
+            }
+
+            .address {
+                display: block;
+                font-size: 18px;
+                line-height: 23px;
+                color: #9E7B56;
+                position: absolute;
+                bottom: -10px;
+                left: -15px;
+                padding-left: 32px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background-image: url(../img/mob_address.svg);
+                    left: 0;
+                    top: 0;
+
                 }
             }
         }
