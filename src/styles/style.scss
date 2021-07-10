@@ -192,6 +192,10 @@
         .address {
             display: none;
         }
+
+        .mob_extra {
+            display: none;
+        }
     }
 }
 
@@ -925,6 +929,7 @@
     .header {
         width: 768px;
         height: 520px;
+        background-image: url(../img/768bg.jpg);
         background-size: cover;
         background-position: 50% 50%;
         background-repeat: no-repeat;
@@ -1049,34 +1054,14 @@
                 top: 80px;
                 left: -768px;
                 transition: ease-in 0.4s;
-                z-index: 0;
+                z-index: 10;
 
                 .menu {
                     display: block;
-                    opacity: 0;
+
                     transition: ease 0.4s;
                     margin-top: 82px;
                     margin-left: 54px;
-                }
-
-                .links {
-                    display: flex;
-                    opacity: 0;
-                    transition: ease 0.4s;
-                }
-
-                .address {
-                    display: block;
-                    opacity: 0;
-                    transition: ease 0.4s;
-                }
-            }
-
-            .toggle-menu.active {
-                left: 0;
-
-                .menu {
-                    opacity: 1;
 
                     &-list {
                         height: 260px;
@@ -1084,15 +1069,20 @@
                 }
 
                 .links {
+                    display: flex;
                     flex-direction: column;
                     position: absolute;
                     top: 34px;
                     left: 202px;
-                    opacity: 1;
+                    transition: ease 0.4s;
+                }
+
+                .phone {
+                    display: none;
                 }
 
                 .address {
-                    opacity: 1;   
+                    display: block;
                     font-size: 18px;
                     line-height: 23px;
                     color: #9E7B56;
@@ -1101,18 +1091,22 @@
                     left: 275px;
                     padding-left: 32px;
                     position: relative;
-    
+
                     &::before {
                         content: "";
                         position: absolute;
-                        width: 20px;
-                        height: 20px;
+                        width: 22px;
+                        height: 22px;
                         background-image: url(../img/mob_address.svg);
+                        background-repeat: no-repeat;
                         left: 0;
                         top: 0;
                     }
-                   
                 }
+            }
+
+            .toggle-menu.active {
+                left: 0;
             }
         }
 
@@ -1180,4 +1174,304 @@
         }
 
     }
+}
+
+@include media_375 {
+    .header {
+        width: 375px;
+        height: 667px;
+        background-image: url(../img/375bg.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &_side-bar {
+            width: 375px;
+            height: 86px;
+            flex-direction: row;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            background: #0B351D;
+            opacity: 1;
+            z-index: 50;
+
+            .logo {
+                margin-top: 10px;
+                margin-left: 36px;
+                width: 97px;
+                height: 62px;
+            }
+
+
+            .phone {
+                display: none;
+            }
+
+            .flat_btn {
+                width: 134px;
+                height: 41px;
+                position: absolute;
+                top: 0;
+                left: 90px;
+            }
+
+            .burger-menu {
+                display: block;
+                position: absolute;
+                right: 35px;
+                top: 21px;
+            }
+
+            .menu-icon-wrapper {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #9FC460;
+                transition: ease-in 0.2s;
+            }
+
+            .menu-icon {
+                position: relative;
+                width: 14px;
+                height: 2px;
+                background-color: #234934;
+            }
+
+            .menu-icon::before {
+                position: absolute;
+                left: 0;
+                top: -6px;
+                content: '';
+                width: 14px;
+                height: 2px;
+                background-color: #234934;
+                transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+
+            }
+
+            .menu-icon::after {
+                position: absolute;
+                left: 0;
+                top: 6px;
+                content: '';
+                width: 14px;
+                height: 2px;
+                background-color: #234934;
+                transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+
+            }
+
+            .menu-icon.menu-icon-active {
+                background-color: transparent;
+            }
+
+            .menu-icon.menu-icon-active::before {
+                transform: rotate(45deg);
+                top: 0;
+                transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+                background: #E3CEA3;
+            }
+
+            .menu-icon.menu-icon-active::after {
+                transform: rotate(-45deg);
+                top: 0;
+                transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+                background: #E3CEA3;
+            }
+
+            .menu-icon-wrapper.active {
+                background-color: transparent;
+            }
+
+
+            .toggle-menu {
+                display: block;
+                width: 375px;
+                height: 505px;
+                background-color: #0B351D;
+                position: absolute;
+                top: 80px;
+                left: -375px;
+                transition: ease-in 0.4s;
+                z-index: 10;
+
+                .menu {
+                    display: block;
+                    transition: ease 0.4s;
+                    margin-top: 38px;
+                    margin-left: 105px;
+
+                    &-list {
+                        height: 260px;
+                    }
+                }
+
+                .links {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 263px;
+                    left: 32px;
+
+                }
+
+                .phone {
+                    display: block;
+                    position: absolute;
+                    top: 358px;
+                    left: 32px;
+
+                    &_link {
+                        display: flex;
+                        flex-direction: column;
+                        letter-spacing: 1px;
+
+                        &-number {
+                            font-size: 22px;
+                            line-height: 28px;
+                            color: #E3CEA3;
+                        }
+
+                        &-text {
+                            font-size: 14px;
+                            line-height: 18px;
+                            color: #9FC460;
+                        }
+                    }
+                }
+
+                .address {
+                    font-size: 14px;
+                    line-height: 17.6px;
+                    bottom: -140px;
+                    left: 70px;
+                    padding-left: 32px;
+                    position: relative;
+                    width: 240px;
+                    //border: 1px solid red;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 22px;
+                        height: 22px;
+                        background-image: url(../img/mob_address.svg);
+                        background-repeat: no-repeat;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+
+            .toggle-menu.active {
+                left: 0;
+            }
+        }
+
+        .promo {
+            left: 27px;
+            top: 370px;
+            width: 427px;
+
+            .forest_logo {
+                margin-left: 10px;
+            }
+
+            &_text {
+                margin-top: 12px;
+                padding-left: 10px;
+
+                &-1 {
+                    font-size: 36px;
+                    line-height: 45px;
+                }
+
+                &-2 {
+                    font-size: 26px;
+                    line-height: 26.2px;
+                }
+
+                &-3 {
+                    margin-top: 4px;
+                    font-size: 38px;
+                    line-height: 35px;
+                    letter-spacing: -0.6px;
+                }
+
+                &-4 {
+                    margin-top: 0;
+                    font-size: 25px;
+                    line-height: 28px;
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .address {
+                display: none;
+            }
+
+
+        }
+
+        .extra {
+            display: flex;
+            justify-content: space-between;
+            height: 86px;
+            width: 375px;
+            background-color: #0B351D;
+            padding-top: 43px;
+            padding-left: 70px;
+            padding-right: 52px;
+            position: absolute;
+            bottom: -74px;
+            left: 0;
+            font-size: 12px;
+            line-height: 15px;
+            text-transform: uppercase;
+
+            a {
+                color: #E3CEA3;
+            }
+
+            &_tel {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    background-image: url(../img/phone-call.svg);
+                    width: 17px;
+                    height: 18px;
+                    top: -28px;
+                    left: 30px;
+                }
+            }
+
+            &_request {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    background-image: url(../img/bell.svg);
+                    width: 14px;
+                    height: 15px;
+                    top: -24px;
+                    left: 48px;
+                }
+            }
+        }
+
+    }
+
+
+
+
+
+
+
 }
